@@ -15,6 +15,10 @@ After downloading:
     > # if you want to initialise with Encore, this will run the above command if the application directory doesn't exists (becasue Symfony is required)
     > make init-symfony-encore
   ```
+- start the dev containers:
+  ```bash
+    > make start
+  ```
 - browse your localhost and you'll see the Symfony welcome page
 #### From within the containers:
 - start the docker container:
