@@ -40,7 +40,7 @@ After downloading:
   	> # login to the container, note that the files are mapped to /tmp
   	> docker exec -it docker_tools_1 bash
   	> # following the Guidlines on 
-    > # https://symfony.com/doc/current/frontend/encore/installation.html
+  	> # https://symfony.com/doc/current/frontend/encore/installation.html
   	> yarn add @symfony/webpack-encore --dev
   	> composer require encore
   	> yarn install
