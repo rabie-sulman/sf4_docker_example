@@ -37,3 +37,21 @@ stop:
 .PHONY: start
 rebuild-and-start:
 	docker-compose up --build -d
+
+.PHONY: require
+sy-require:
+	if [ "$(PACK)" = "null" ]; then \
+		printf "$(RED)Package needs to be passed as argument: PACK \n" ; \
+	else \
+		printf "Package: $(RED) <$(PACK)> $(NOCOLOUR) is being required \n" ; \
+		docker-compose run --rm php composer require $(PACK); \
+	fi
+
+.PHONY: remove
+sy-remove:
+	if [ "$(PACK)" = "null" ]; then \
+		printf "$(RED)Package needs to be passed as argument: PACK \n" ; \
+	else \
+		printf "Package: $(RED) <$(PACK)> $(NOCOLOUR)is being removed \n" ; \
+		docker-compose run --rm php composer remove $(PACK); \
+	fi

@@ -46,6 +46,17 @@ After downloading:
   ```
 - browse your localhost and you'll see the Symfony welcome page
  
+## Symfony commands from the Makefile
+- `sy-require`: this command will do a `composer require` command inside the container. Use as follows:
+  ```bash
+    > make sy-require PACK=<packname>
+    > # example: make sy-require PACK=annotations
+  ```
+- `sy-remove`: this command will do a `composer remove` command inside the container. Use as follows:
+  ```bash
+    > make sy-remove PACK=<packname>
+    > # example: make sy-remove PACK=annotations
+  ```
 ## notes
 - it is recommended to make use of the Makefile
 - the tools container is based on php-fpm 7.1 and also has node and yarn installed globally. It also uses a non-root user `tools` for permissions for the `composer`, `npm` and `yarn` commands.
