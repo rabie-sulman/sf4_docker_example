@@ -2,8 +2,6 @@ include .env
 
 export $(shell sed 's/=.*//' .env)
 
-U_ID=`id -u`
-
 .PHONY: init-symfony
 init-symfony:
 	if [ ! -d "../$(APP_NAME)" ]; then \
@@ -12,8 +10,8 @@ init-symfony:
 	cd ../$(APP_NAME)
 	docker-compose -f docker-compose-dev.yml run --rm tools bash -ci 'composer create-project symfony/skeleton .'
 
-.PHONY: init-sy-front
-init-sy-front:
+.PHONY: init-symfony-encore
+init-symfony-encore:
 	if [ ! -d "../$(APP_NAME)" ]; then \
 		make init-symfony; \
 	fi
