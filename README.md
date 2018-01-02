@@ -39,10 +39,11 @@ After downloading:
   	> docker-compose -f docker-compose-dev.yml up --build -d
   	> # login to the container, note that the files are mapped to /tmp
   	> docker exec -it docker_tools_1 bash
-  	> # following the Guidlines on https://symfony.com/doc/current/frontend/encore/installation.html
-    > yarn add @symfony/webpack-encore --dev
-    > composer require encore
-    > yarn install
+  	> # following the Guidlines on 
+  	> # https://symfony.com/doc/current/frontend/encore/installation.html
+  	> yarn add @symfony/webpack-encore --dev
+  	> composer require encore
+  	> yarn install
   ```
 - browse your localhost and you'll see the Symfony welcome page
  
