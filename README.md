@@ -22,3 +22,4 @@
 ## notes
 - the nginx config maps to the `public` folder as root folder as the new SF4 now changed from web
 - php is build based on `php:7.1` and added on that is the `composer`, `pdo`, `xdebug` and other libraries (see `Docker/php/Dockerfile`)
+
