@@ -58,6 +58,11 @@ After downloading:
     > make sy-remove PACK=<packname>
     > # example: make sy-remove PACK=annotations
   ```
+- `sy-run`: this command will run a command on Symfony console inside the container. Use as follows:
+  ```bash
+    > make sy-run C=<symfony_command>
+    > # example: make sy-run C=debug:router
+  ```
 ## notes
 - it is recommended to make use of the Makefile
 - the tools container is based on php-fpm 7.1 and also has node and yarn installed globally. It also uses a non-root user `tools` for permissions for the `composer`, `npm` and `yarn` commands.

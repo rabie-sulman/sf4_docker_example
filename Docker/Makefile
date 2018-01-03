@@ -55,3 +55,8 @@ sy-remove:
 		printf "Package: $(RED) <$(PACK)> $(NOCOLOUR)is being removed \n" ; \
 		docker-compose run --rm php composer remove $(PACK); \
 	fi
+
+.PHONY: run
+sy-run:
+	printf "Running Symfony command: <$(RED)$(C)$(NOCOLOUR)> \n" ; \
+	docker-compose run --rm php bin/console $(C); \
