@@ -64,7 +64,7 @@ After downloading:
     > # example: make sy-run C=debug:router
   ```
 ## notes
-- it is recommended to make use of the Makefile
+- it is recommended to make use of the Makefile, type `make` to get documentation on usage.
 - the tools container is based on php-fpm 7.1 and also has node and yarn installed globally. It also uses a non-root user `tools` for permissions for the `composer`, `npm` and `yarn` commands.
 - the tools container is only for project initialisation purposes
 - the nginx config maps to the `public` folder as root folder as the new SF4 now changed from web
