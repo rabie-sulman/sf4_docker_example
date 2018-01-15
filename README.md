@@ -63,6 +63,11 @@ After downloading:
     > make sy-run C=<symfony_command>
     > # example: make sy-run C=debug:router
   ```
+- `run`: this command will run a command on Symfony console inside the tools container. Use as follows:
+  ```bash
+    > make run C="<any command>"
+    > # example: make run C="pwd && ls"
+  ```
 ## notes
 - it is recommended to make use of the Makefile, type `make` to get documentation on usage.
 - the tools container is based on php-fpm 7.1 and also has node and yarn installed globally. It also uses a non-root user `tools` for permissions for the `composer`, `npm` and `yarn` commands.

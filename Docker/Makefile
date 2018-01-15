@@ -22,6 +22,7 @@ usage:
 	@printf "$(GREEN)sy-require PACK=package-name $(NOCOLOUR): run composer require inside the php container\n" ;
 	@printf "$(GREEN)sy-remove PACK=package-name $(NOCOLOUR): run composer remove inside the php container\n" ;
 	@printf "$(GREEN)sy-run C=cache:clear $(NOCOLOUR):run the symfony console inside the php container\n" ;
+	@printf "$(GREEN)run C=\"some command\" $(NOCOLOUR):run the command inside the tools container\n" ;
 
 .PHONY: init-symfony
 init-symfony:
@@ -34,7 +35,7 @@ init-symfony:
 	fi;
 
 .PHONY: init-symfony-encore
-init-symfony-front:
+init-symfony-encore:
 	@if [ ! -d "../$(APP_NAME)" ]; then \
 		make init-symfony; \
 	fi
@@ -79,3 +80,12 @@ sy-remove:
 sy-run:
 	@printf "Running Symfony command: <$(RED)$(C)$(NOCOLOUR)> \n" ; \
 	docker-compose run --rm php bin/console $(C); \
+
+.PHONY: run
+run:
+	@if [ "$(C)" = "" ]; then \
+		printf "$(RED)To run a command in the container, you needs to pass as argument: C \n" ; \
+	else \
+		printf "Running the command: <$(RED)$(C)$(NOCOLOUR)> \n" ; \
+		docker-compose -f docker-compose-dev.yml run --rm tools $(C); \
+	fi
