@@ -1,4 +1,4 @@
-FROM php:7.1-fpm
+FROM php:7-fpm
 ARG TIMEZONE
 
 RUN useradd -ms /bin/bash tools
